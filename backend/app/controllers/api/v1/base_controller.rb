@@ -6,6 +6,8 @@ class Api::V1::BaseController < ApplicationController
 
 	attr_accessor :current_user
 
+	require 'kaminari'
+
 	protected
 
 	def api_error(status: 500, errors: [])
@@ -20,7 +22,7 @@ class Api::V1::BaseController < ApplicationController
 	def paginate(resource)
 		resource = resource.page(params[:page] || 1)
 		if params[:per_page]
-			resource = resource.per_page(params[:per_page])
+			resource = resource.per(params[:per_page])
 		end
 		return resource
 	end

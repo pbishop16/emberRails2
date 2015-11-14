@@ -1,0 +1,21 @@
+{{#if model.isDeleted}}
+  <div style="text-align: center; height: 300px;">
+    <button class="waves-effect waves-light btn" style="top: 100px;" {{action "undoDelete" model}}>Undo</button>
+  </div>
+{{else}}
+  <div class="card blue-grey darken-1">
+    <div class="card-content white-text">
+      <span class="card-title">{{model.name}}</span>
+      <p>Email: {{model.email}}</p>
+      <p>Investor Status: {{model.investor_funded}}</p>
+      <hr>
+      <p>Updated At: {{model.updated_at}}</p>
+      <p>Created At: {{model.created_at}}</p>
+    </div>
+    <div class="card-action">
+      {{link-to 'Edit' 'users.user.edit' class='waves-effect waves-light btn white-text'}} 
+      <button class="waves-effect waves-light btn red" {{action "deleteUser" model}}>Delete</button>
+    </div>
+  </div>
+{{/if}}
+{{liquid-outlet class='user-transition2'}}

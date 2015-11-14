@@ -3,8 +3,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 	#before_filter :authenticate_user!, only: [:index, :show, :create, :update, :destroy]
 
 	def index
-		users = User.all
-		users = paginate(users)
+		users = paginate(User.all)
 		render(
 			json: ActiveModel::ArraySerializer.new(
 				users, 
