@@ -2,10 +2,18 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'style-src': "'self' 'unsafe-inline'",
+      'connect-src': "'self' http://localhost:3000"
+    },
     modulePrefix: 'frontend',
+    podModulePrefix: 'frontend/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    tokenEndpointSet: 'http://localhost:3000/api/v1/sessions',
+    hostSet: 'http://localhost:3000',
+    crossOriginSet: 'http://localhost:3000/api/v1/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -28,6 +36,13 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+      'style-src': "'self' 'unsafe-inline'",
+      'connect-src': "'self' http://localhost:3000"
+    };
+    ENV.crossOriginSet = 'http://localhost:3000/api/v1/';
+    ENV.tokenEndpointSet = 'http://localhost:3000/api/v1/sessions';
+    ENV.hostSet = 'http://localhost:3000';
   }
 
   if (environment === 'test') {

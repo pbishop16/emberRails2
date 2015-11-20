@@ -1,2 +1,22 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
+
+
+.success {
+	color: white;
+	background: green;
+}
+
+.info {
+	color: white;
+	background: #55f;
+}
+
+.alert {
+	color: white;
+	background: red;
+}
+
+.error {
+	color: red;
+}

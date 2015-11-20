@@ -1,6 +1,28 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
-{{outlet}}
-
+<div class="container">
+	<div class="" style="text-align: center;">
+		<h2 id="title" class="">Welcome to Ember</h2>
+	</div>
+	<div class="" style="text-align: center;">
+		{{link-to 'Home' 'index' class='waves-effect waves-light btn blue'}}
+		{{link-to 'Users' 'users' class='waves-effect waves-light btn purple'}}
+		{{#if session.isAuthenticated}}
+			<a {{ action 'invalidateSession' }} class='waves-effect waves-light btn red'>Logout</a>  
+		{{else}}
+			{{link-to 'Login' 'login' class='waves-effect waves-light btn green'}}
+		{{/if}}
+	</div> 
+	<br>
+	<div class="row" style="text-align: center;">
+		{{#if session.isAuthenticated}}
+			<p>Welcome <strong>{{session.content.secure.current_user_name}}</strong></p>  
+		{{else}}
+			<p>Please Sign in.</p>
+		{{/if}}
+	</div>
+	<div class="row">
+	{{outlet}}
+	</div>
+</div>
+{{ember-notify}}
 {{!-- ember-cli-materialize modal container --}}
 {{md-modal-container}}

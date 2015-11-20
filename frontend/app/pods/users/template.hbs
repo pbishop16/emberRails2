@@ -1,0 +1,34 @@
+<div class="col m7">
+  <h4 class="card-panel" style="text-align: center;">
+    {{!-- Updating total count needs work. --}}
+    There are {{model.meta.total_count}} users.
+  </h4>
+  <ul class="collection">
+    {{#each model as |user|}}
+      {{#link-to 'users.user.index' user tagName="li" class="collection-item" }}
+          {{user.id}} | 
+          {{user.name}}, 
+          {{user.email}}
+      {{/link-to}}
+    {{else}}
+      <li class="list-group-item">No users found.</li>
+    {{/each}}
+    {{#infinity-loader infinityModel=model destroyOnInfinity=true}}
+      <div style="text-align: center;">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+      </div>
+    {{/infinity-loader}}
+  </ul>
+</div>
+<div class="col m5" >
+  <div style="text-align: center;">
+    {{link-to 'Create User' 'users.new' class='btn waves-effect waves-light'}}
+  </div>
+  <br>
+{{!-- {{outlet}} --}}
+{{liquid-outlet class='user-transition1'}}
+</div>
+
+
