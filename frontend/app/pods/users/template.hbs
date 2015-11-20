@@ -1,6 +1,7 @@
 <div class="col m7">
   <h4 class="card-panel" style="text-align: center;">
-    There are {{model.length}} users.
+    {{!-- Updating total count needs work. --}}
+    There are {{model.meta.total_count}} users.
   </h4>
   <ul class="collection">
     {{#each model as |user|}}
@@ -12,7 +13,7 @@
     {{else}}
       <li class="list-group-item">No users found.</li>
     {{/each}}
-    {{#infinity-loader infinityModel=model}}
+    {{#infinity-loader infinityModel=model destroyOnInfinity=true}}
       <div style="text-align: center;">
         <div class="progress">
             <div class="indeterminate"></div>
@@ -29,3 +30,5 @@
 {{!-- {{outlet}} --}}
 {{liquid-outlet class='user-transition1'}}
 </div>
+
+

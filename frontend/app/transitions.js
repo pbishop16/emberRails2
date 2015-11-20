@@ -44,4 +44,11 @@ export default function() {
 		this.debug()
 	);
 
+	this.transition(
+		this.hasClass('user-transition2'),
+		this.toRoute('users.new'),
+		this.use('toRight'),
+		this.debug()
+	);
+
 }

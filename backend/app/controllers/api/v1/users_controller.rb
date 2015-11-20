@@ -36,12 +36,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 		if !user.update_attributes(update_params)
 			return api_error(status: 422, errors: user.errors)
 		end
-		render(
-			json: Api::V1::UserSerializer.new(user).to_json, 
-			status: 200, 
-			location: api_v1_user_path(user.id), 
-			serializer: Api::V1::UserSerializer
-		)
+		render(json: Api::V1::UserSerializer.new(user).to_json, status: 200, location: api_v1_user_path(user.id), each_serializer: Api::V1::UserSerializer)
 	end
 
 	def destroy
@@ -59,7 +54,12 @@ class Api::V1::UsersController < Api::V1::BaseController
 			:name, 
 			:email, 
 			:password, 
-			:investor_funded
+			:investor_funded,
+			:company, 
+			:sector, 
+			:customers, 
+			:revenue, 
+			:company_description
 		).delete_if{ |k,v| v.nil?}
 	end
 

@@ -1,0 +1,94 @@
+<div class="card #e8f5e9 green lighten-5">
+  <div class="card-content black-text">
+    <div class="card-title black-text">
+    	{{#unless model.id}}
+    		Create User:
+    	{{else}}
+    	  Edit User: 
+    	{{/unless}}
+    </div>
+    
+    <form>
+		  <div class="input-field">
+		    {{input type="text" value=model.name class="validate" id="exampleInputUser1"}}
+		    <label for="exampleInputUser1" class="{{if model.name 'active'}}">Name</label>
+		    {{#if (v-get model 'name' 'isInvalid')}}
+		      <div class="error">
+		      	{{v-get model 'name' 'message'}}
+		      </div>
+		    {{/if}}
+		  </div>
+		  <div class="input-field">
+		    {{input type="email" value=model.email class="validate" id="exampleInputEmail1"}}
+		    <label for="exampleInputEmail1" class="{{if model.name 'active'}}">Email Address</label>
+		    {{#if (v-get model 'email' 'isInvalid')}}
+		      <div class="error">
+		      	{{v-get model 'email' 'message'}}
+		      </div>
+		    {{/if}}
+		  </div>
+		  {{#unless model.id}}
+		    <div class="input-field">
+			    {{input type="password" value=model.password class="validate" id="exampleInputPassword1"}}
+			    <label for="exampleInputPassword1">Password</label>
+			    {{#if (v-get model 'password' 'isInvalid')}}
+			      <div class="error">
+			      	{{v-get model 'password' 'message'}}
+			      </div>
+			    {{/if}}
+			  </div>
+		  {{/unless}}
+		  
+		  <div class="input-field">
+		    {{input type="text" value=model.company class="validate" id="exampleInputCompany1"}}
+		    <label for="exampleInputCompany1" class="{{if model.name 'active'}}">Company</label>
+		  </div>
+		  <div class="input-field">
+		    {{input type="text" value=model.sector class="" id="exampleInputSector1"}}
+		    <label for="exampleInputSector1" class="{{if model.name 'active'}}">Sector</label>
+		  </div>
+		  <div class="input-field">
+		    {{input type="text" value=model.customers class="validate" id="exampleInputCustomers1"}}
+		    <label for="exampleInputCustomers1" class="{{if model.name 'active'}}">Customers</label>
+		  </div>
+		  <div class="input-field">
+		    {{input type="text" value=model.revenue class="validate" id="exampleInputRevenue1"}}
+		    <label for="exampleInputRevenue1" class="{{if model.name 'active'}}">Revenue</label>
+		  </div>
+		  <div class="input-field">
+		    {{textarea type="text" value=model.company_description class="materialize-textarea validate" id="exampleInputCompanyDescription1"}}
+		    <label for="exampleInputCompanyDescription1" class="{{if model.name 'active'}}">Company Description</label>
+		  </div>
+		  <p>
+		  	{{input type="checkbox" checked=model.investor_funded id='check'}} 
+		    <label for='check'>Investor Funded:</label>
+		  </p>
+		  <br>
+		  <div class="card-action">
+		  {{#unless model.id}}
+		  	{{#unless (v-get model "isInvalid")}}
+		  	  <div style="text-align: center;">
+				  	<button type='submit' value='Create' class="waves-effect waves-light btn" {{action 'createUser'}} style="width: 100%;">Create</button>
+				  </div>
+		  	{{/unless}}
+		  {{else}}
+		  	{{#if model.hasDirtyAttributes}}
+			  	<div style="text-align: center;">
+			    	<button type='submit' class="btn btn-default" {{action 'saveChanges'}} style="width: 100%;">Save Changes</button>
+			    </div>
+			  {{/if}}
+		  {{/unless}}
+		  </div>
+		</form>
+		  {{#unless model.id}}
+		  <div style="text-align: center;">
+				<button class="waves-effect waves-light btn red" {{action "cancelCreate"}} style="width: 90%;">Cancel</button>
+			</div>
+			{{else}}
+		  <div style="text-align: center;">
+				<button class="waves-effect waves-light btn red" {{action "cancelEdit"}} style="width: 90%;">Cancel</button>
+			</div>
+			{{/unless}}
+		  
+  </div>
+</div>
