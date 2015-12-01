@@ -1,26 +1,5 @@
 import Ember from 'ember';
 
-// import {
-//   validator, buildValidations
-// }
-// from 'ember-cp-validations';
-
-// var Validations = buildValidations(Validations, {
-//   name: validator('presence', true),
-//   password: [
-//     validator('presence', true),
-//     validator('length', {
-//       min: 8,
-//       max: 12
-//     })
-//   ],
-//   email: [
-//     validator('presence', true),
-//     validator('format', { type: 'email' })
-//   ],
-// });
-
-
 export default Ember.Component.extend({
 	
 	actions: {
@@ -30,7 +9,7 @@ export default Ember.Component.extend({
 		},
 
 		cancelCreate: function(model) {
-			this.get('model').rollbackAttributes();
+			this.get('model').deleteRecord();
 			this.sendAction('cancelCreate');
 		},
 

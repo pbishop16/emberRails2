@@ -16,6 +16,10 @@ export default Ember.Route.extend(InfinityRoute, {
     return this.infinityModel("user", { perPage: 12, startingPage: 1 });
     // return this.store.findAll('user');
 
+  },
+
+  modelAdmin() {
+  	return this.store.findAll('user');
   }
 
   // totalCount: function() {
