@@ -11,56 +11,19 @@
     	Form
     </div>
     <form>
-		  <div class="input-field">
-		    {{input type="text" value=model.name class="validate" id="exampleInputUser1"}}
-		    <label for="exampleInputUser1" class="{{if model.name 'active'}}">Name</label>
-		    {{#if (v-get model 'name' 'isInvalid')}}
-		      <div class="error">
-		      	{{v-get model 'name' 'message'}}
-		      </div>
-		    {{/if}}
-		  </div>
-		  <div class="input-field">
-		    {{input type="email" value=model.email class="validate" id="exampleInputEmail1"}}
-		    <label for="exampleInputEmail1" class="{{if model.name 'active'}}">Email Address</label>
-		    {{#if (v-get model 'email' 'isInvalid')}}
-		      <div class="error">
-		      	{{v-get model 'email' 'message'}}
-		      </div>
-		    {{/if}}
-		  </div>
+    	{{form-field label='name' value=model.name model=model}}
+		  {{form-field label='email' value=model.email model=model}}
 		  {{#unless model.id}}
-		    <div class="input-field">
-			    {{input type="password" value=model.password class="validate" id="exampleInputPassword1"}}
-			    <label for="exampleInputPassword1">Password</label>
-			    {{#if (v-get model 'password' 'isInvalid')}}
-			      <div class="error">
-			      	{{v-get model 'password' 'message'}}
-			      </div>
-			    {{/if}}
-			  </div>
+		    {{form-field label='password' value=model.password model=model}}
 		  {{/unless}}
-		  
+		  {{form-field label='company' value=model.company model=model}}
+		  {{form-field label='sector' value=model.sector model=model}}
+		  {{form-field label='customers' value=model.customers model=model}}
+		  {{form-field label='revenue' value=model.revenue model=model}}
 		  <div class="input-field">
-		    {{input type="text" value=model.company class="validate" id="exampleInputCompany1"}}
-		    <label for="exampleInputCompany1" class="{{if model.name 'active'}}">Company</label>
-		  </div>
-		  <div class="input-field">
-		    {{input type="text" value=model.sector class="" id="exampleInputSector1"}}
-		    <label for="exampleInputSector1" class="{{if model.name 'active'}}">Sector</label>
-		  </div>
-		  <div class="input-field">
-		    {{input type="text" value=model.customers class="validate" id="exampleInputCustomers1"}}
-		    <label for="exampleInputCustomers1" class="{{if model.name 'active'}}">Customers</label>
-		  </div>
-		  <div class="input-field">
-		    {{input type="text" value=model.revenue class="validate" id="exampleInputRevenue1"}}
-		    <label for="exampleInputRevenue1" class="{{if model.name 'active'}}">Revenue</label>
-		  </div>
-		  <div class="input-field">
-		    {{textarea type="text" value=model.company_description class="materialize-textarea validate" id="exampleInputCompanyDescription1"}}
-		    <label for="exampleInputCompanyDescription1" class="{{if model.name 'active'}}">Company Description</label>
-		  </div>
+			  {{textarea type="text" value=model.company_description class="materialize-textarea validate" id="exampleInputCompanyDescription1"}}
+			  <label for="exampleInputCompanyDescription1" class="{{if model.name 'active'}}">Company Description</label>
+			</div>
 		  <p>
 		  	{{input type="checkbox" checked=model.investor_funded id='check'}} 
 		    <label for='check'>Investor Funded:</label>

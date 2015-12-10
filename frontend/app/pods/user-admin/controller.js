@@ -19,11 +19,11 @@ export default Ember.Controller.extend({
       'propertyName': "sector",
       'title': "Sector"
     }
-    // ,
-    // {
-    //   "title": "Delete",
-    //   "template": "custom/delete"
-    // }
+    ,
+    {
+      "title": "Delete",
+      "template": "custom/delete"
+    }
   ]
   
 });

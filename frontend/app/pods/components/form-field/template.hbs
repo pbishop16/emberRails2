@@ -1,0 +1,19 @@
+<div class="input-field">
+  {{input type=inputType value=value class="validate" id=inputId}}
+  <label for={{inputId}} class='{{if value 'active'}}'>{{labelLabel}}</label>
+  {{#if (v-get model label 'isInvalid')}}
+    <div class="error">
+    	{{v-get model label 'message'}}
+    </div>
+  {{/if}}
+</div>
+
+{{!-- <div class="input-field">
+  {{input type="text" value=model.name class="validate" id="exampleInputUser1"}}
+  <label for="exampleInputUser1" class="{{if model.name 'active'}}">Name</label>
+  {{#if (v-get model 'name' 'isInvalid')}}
+    <div class="error">
+    	{{v-get model 'name' 'message'}}
+    </div>
+  {{/if}}
+</div> --}}
