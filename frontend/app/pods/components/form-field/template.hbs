@@ -1,0 +1,9 @@
+<div class="input-field">
+  {{input type=inputType value=value class="validate" id=inputId}}
+  <label for={{inputId}} class='{{if value 'active'}}'>{{labelLabel}}</label>
+  {{#if (v-get model label 'isInvalid')}}
+    <div class="error">
+    	{{v-get model label 'message'}}
+    </div>
+  {{/if}}
+</div>

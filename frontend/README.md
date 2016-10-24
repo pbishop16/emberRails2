@@ -1,53 +1,30 @@
-# Frontend
+# EmberRails2 - ONLY USE THIS BRANCH FOR DEPLOYMENT
+This is a draft Application for the testing of the following:  
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+1. Ember + Rails API
+2. Ember Addon Integration
+3. Heroku Deployment
+4. API Auth Implementation
 
-## Prerequisites
 
-You will need the following things properly installed on your computer.
+[Demo Site](https://radiant-beach-8762.herokuapp.com/) (edit)
+---
+> Login using:  
+> Email: your RS email  
+> Password: 4614X7I1
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
 
-## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+Ember Addons:
+---
 
-## Running / Development
+1. [liquid-fire](http://ef4.github.io/liquid-fire/)
+2. [ember-materialize](http://materializecss.com/)
+3. [ember-simple-auth](http://ember-simple-auth.com/)
+4. [ember-infinity](http://hhff.github.io/ember-infinity/)
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Rails Gems (essential):
+---
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+1. [active_model_serializers](https://github.com/rails-api/active_model_serializers)
+2. [bcrypt](https://github.com/codahale/bcrypt-ruby)

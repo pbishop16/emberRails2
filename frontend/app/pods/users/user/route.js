@@ -6,14 +6,14 @@ export default Ember.Route.extend({
 	notify: Ember.inject.service('notify'),
 
 	model: function(params) {
-		return this.store.findAll('user', params.id);
+		return this.store.findRecord('user', params.user_id);
 	},
 
 	actions: {
 		undoDelete: function(user) {
 			Ember.run.cancel(runLater);
 			user.rollbackAttributes();
-			this.get('notify').info('User deletion cancelled.', {closeAfter: null});
+			this.get('notify').info('User deletion cancelled.', {closeAfter: 2000});
 			this.transitionTo('users.user');
 		},
 
@@ -21,10 +21,10 @@ export default Ember.Route.extend({
 			user.deleteRecord();
 			runLater = Ember.run.later(this, function(){
 				user.save();
-				this.get('notify').alert('Deletion successful.', {closeAfter: null});
+				this.get('notify').alert('Deletion successful.', {closeAfter: 2000});
 				this.transitionTo('users');
 			}, 2000);
 		}
 	}
-	
+
 });

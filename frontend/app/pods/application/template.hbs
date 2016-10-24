@@ -5,6 +5,7 @@
 	<div class="" style="text-align: center;">
 		{{link-to 'Home' 'index' class='waves-effect waves-light btn blue'}}
 		{{link-to 'Users' 'users' class='waves-effect waves-light btn purple'}}
+		{{link-to "Admin" "user-admin" class='waves-effect waves-light btn black'}}
 		{{#if session.isAuthenticated}}
 			<a {{ action 'invalidateSession' }} class='waves-effect waves-light btn red'>Logout</a>  
 		{{else}}

@@ -9,7 +9,7 @@ module.exports = function(environment) {
     modulePrefix: 'frontend',
     podModulePrefix: 'frontend/pods',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
     tokenEndpointSet: 'http://localhost:3000/api/v1/sessions',
     hostSet: 'http://localhost:3000',
@@ -24,9 +24,6 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-    sassOptions: {
-      includePaths: ['bower_components/materialize/sass']
     }
   };
 
@@ -47,7 +44,6 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter

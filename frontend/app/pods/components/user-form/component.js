@@ -1,45 +1,24 @@
 import Ember from 'ember';
 
-// import {
-//   validator, buildValidations
-// }
-// from 'ember-cp-validations';
-
-// var Validations = buildValidations(Validations, {
-//   name: validator('presence', true),
-//   password: [
-//     validator('presence', true),
-//     validator('length', {
-//       min: 8,
-//       max: 12
-//     })
-//   ],
-//   email: [
-//     validator('presence', true),
-//     validator('format', { type: 'email' })
-//   ],
-// });
-
-
 export default Ember.Component.extend({
 	
 	actions: {
-		createUser: function(model) {
+		createUser: function() {
 			var user = this.get('model');
 			this.sendAction('createUser', user);
 		},
 
-		cancelCreate: function(model) {
-			this.get('model').rollbackAttributes();
+		cancelCreate: function() {
+			this.get('model').deleteRecord();
 			this.sendAction('cancelCreate');
 		},
 
-		saveChanges: function(model){
+		saveChanges: function(){
 			var user = this.get('model');
 			this.sendAction('saveChanges', user);
 		},
 
-		cancelEdit: function(model) {
+		cancelEdit: function() {
 			this.get('model').rollbackAttributes();
 			this.sendAction('cancelEdit');
 		}
