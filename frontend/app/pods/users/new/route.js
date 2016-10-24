@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	beforeModel(){
-		// this.transitionTo('users');
 		this.transitionTo('users.new');
 	},
 	notify: Ember.inject.service('notify'),

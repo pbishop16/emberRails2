@@ -3,22 +3,22 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	
 	actions: {
-		createUser: function(model) {
+		createUser: function() {
 			var user = this.get('model');
 			this.sendAction('createUser', user);
 		},
 
-		cancelCreate: function(model) {
+		cancelCreate: function() {
 			this.get('model').deleteRecord();
 			this.sendAction('cancelCreate');
 		},
 
-		saveChanges: function(model){
+		saveChanges: function(){
 			var user = this.get('model');
 			this.sendAction('saveChanges', user);
 		},
 
-		cancelEdit: function(model) {
+		cancelEdit: function() {
 			this.get('model').rollbackAttributes();
 			this.sendAction('cancelEdit');
 		}

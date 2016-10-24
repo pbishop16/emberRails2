@@ -1,22 +1,22 @@
-@import 'materialize';
-@import 'ember-cli-materialize';
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+// Materialize styles
+@import "materialize";
+
 
 
 .success {
-	color: white;
-	background: green;
+  background-color: green;
+  color: white;
 }
 
 .info {
-	color: white;
-	background: #55f;
+  background-color: blue;
+  color: white;
 }
 
 .alert {
-	color: white;
-	background: red;
-}
-
-.error {
-	color: red;
+  background-color: red;
+  color: white;
 }
