@@ -9,9 +9,9 @@ This is a draft Application for the testing of the following:
 
 [Click Here for Demo Site](https://murmuring-cove-32988.herokuapp.com/)
 ---
-> Login using:  
-> Username: login@emberrails.com
-> Password: 7Zc4}UI0
+Login using:  
++ Username: login@emberrails.com
++ Password: 7Zc4}UI0
 
 
 
