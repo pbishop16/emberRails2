@@ -19,7 +19,7 @@ task :ember_update do
     sh 'git commit -m "app updated to the latest ember-cli"'
   end
 
-end 
+end
 
 
 # Development Environment
@@ -66,7 +66,7 @@ task :deploy_staging do
   sh 'heroku run rake db:migrate'
   sh 'heroku run rake db:seed'
 
-  release_output = `heroku releases -a radiant-beach-8762 `.split "\n"
+  release_output = `heroku releases -a sleepy-island-97763 `.split "\n"
   latest_release = release_output[1].match(/v\d+/).to_s
 
   tags = `git tag`
@@ -93,12 +93,12 @@ task :deploy_production do
   end
 
   sh 'git subtree push -P backend heroku master'
-  
+
   # Remove for official production deployment
   sh 'heroku run rake db:migrate'
   sh 'heroku run rake db:seed'
 
-  release_output = `heroku releases -a radiant-beach-8762 `.split "\n"
+  release_output = `heroku releases -a sleepy-island-97763 `.split "\n"
   latest_release = release_output[1].match(/v\d+/).to_s
 
   tags = `git tag`

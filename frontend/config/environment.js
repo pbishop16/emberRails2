@@ -53,9 +53,35 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-
+  // Staging Environment Override
+  if (environment === 'staging') {
+    ENV.contentSecurityPolicy = {
+      'style-src': "'self' 'unsafe-inline'",
+      'connect-src': "'self' https://sleepy-island-97763.herokuapp.com"
+    };
+    ENV.crossOriginSet = 'https://sleepy-island-97763.herokuapp.com/api/v1/';
+    ENV.tokenEndpointSet = 'https://sleepy-island-97763.herokuapp.com/api/v1/sessions';
+    ENV.hostSet = 'https://sleepy-island-97763.herokuapp.com';
   }
+
+  // Production Environment Override (experimental only; same as staging)
+  if (environment === 'production') {
+    ENV.contentSecurityPolicy = {
+      'style-src': "'self' 'unsafe-inline'",
+      'connect-src': "'self' https://sleepy-island-97763.herokuapp.com"
+    };
+    ENV.crossOriginSet = 'https://sleepy-island-97763.herokuapp.com/api/v1/';
+    ENV.tokenEndpointSet = 'https://sleepy-island-97763.herokuapp.com/api/v1/sessions';
+    ENV.hostSet = 'https://sleepy-island-97763.herokuapp.com';
+  }
+
+  // Simple-Auth Configuration
+  ENV['simple-auth'] ={
+    store: 'simple-auth-session-store:local-storage',
+    authorizer: 'authorizer:custom',
+    crossOriginWhitelist: [ENV.crossOriginSet],
+    routeAfterAuthentication: '/users'
+  };
 
   return ENV;
 };

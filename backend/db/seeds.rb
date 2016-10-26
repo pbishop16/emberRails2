@@ -21,8 +21,8 @@ def random_sector
 end
 
 User.create(
-	name: "Paul Bishop", 
-	email: "pbishop16@gmail.com",
+	name: "Demo AppUser", 
+	email: "login@emberrails.com",
 	password_digest: User.digest('7Zc4}UI0'),
 	investor_funded: random_tf,
   company: Faker::Company.name,
