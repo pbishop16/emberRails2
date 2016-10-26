@@ -55,7 +55,7 @@ task :deploy_staging do
   # sh 'git merge rails-served-html -m "Merging master for deployment"'
   sh 'rm -rf backend/public'
   sh 'cd frontend && ember build --environment staging --output-path=../backend/public && cd ..'
-  sh 'cd backend && rake assets:precompile && cd ..'
+  # sh 'cd backend && rake assets:precompile && cd ..'
 
   unless `git status` =~ /nothing to commit, working directory clean/
     sh 'git add -A'
@@ -85,7 +85,7 @@ task :deploy_production do
   # sh 'git merge rails-served-html -m "Merging master for deployment"'
   sh 'rm -rf backend/public'
   sh 'cd frontend && ember build --environment production --output-path=../backend/public && cd ..'
-  sh 'cd backend && rake assets:precompile && cd ..'
+  # sh 'cd backend && rake assets:precompile && cd ..'
 
   unless `git status` =~ /nothing to commit, working directory clean/
     sh 'git add -A'
