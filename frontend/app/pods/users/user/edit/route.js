@@ -9,7 +9,7 @@ export default Ember.Route.extend({
 			user.save();
 			// this.get('toast').success('User successfully updated.');
 			// this.get('notify').success({html: '<div style="font-color: green;">User successfully updated.</div>'}, {closeAfter: 10});
-			this.get('notify').success('User successfully updated.', {closeAfter: null});
+			this.get('notify').success('User successfully updated.', {closeAfter: 2000});
 			this.transitionTo('users.user');
 		},
 
