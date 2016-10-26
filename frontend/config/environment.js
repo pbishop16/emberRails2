@@ -57,22 +57,22 @@ module.exports = function(environment) {
   if (environment === 'staging') {
     ENV.contentSecurityPolicy = {
       'style-src': "'self' 'unsafe-inline'",
-      'connect-src': "'self' https://sleepy-island-97763.herokuapp.com"
+      'connect-src': "'self' https://murmuring-cove-32988.herokuapp.com"
     };
-    ENV.crossOriginSet = 'https://sleepy-island-97763.herokuapp.com/api/v1/';
-    ENV.tokenEndpointSet = 'https://sleepy-island-97763.herokuapp.com/api/v1/sessions';
-    ENV.hostSet = 'https://sleepy-island-97763.herokuapp.com';
+    ENV.crossOriginSet = 'https://murmuring-cove-32988.herokuapp.com/api/v1/';
+    ENV.tokenEndpointSet = 'https://murmuring-cove-32988.herokuapp.com/api/v1/sessions';
+    ENV.hostSet = 'https://murmuring-cove-32988.herokuapp.com';
   }
 
   // Production Environment Override (experimental only; same as staging)
   if (environment === 'production') {
     ENV.contentSecurityPolicy = {
       'style-src': "'self' 'unsafe-inline'",
-      'connect-src': "'self' https://sleepy-island-97763.herokuapp.com"
+      'connect-src': "'self' https://murmuring-cove-32988.herokuapp.com"
     };
-    ENV.crossOriginSet = 'https://sleepy-island-97763.herokuapp.com/api/v1/';
-    ENV.tokenEndpointSet = 'https://sleepy-island-97763.herokuapp.com/api/v1/sessions';
-    ENV.hostSet = 'https://sleepy-island-97763.herokuapp.com';
+    ENV.crossOriginSet = 'https://murmuring-cove-32988.herokuapp.com/api/v1/';
+    ENV.tokenEndpointSet = 'https://murmuring-cove-32988.herokuapp.com/api/v1/sessions';
+    ENV.hostSet = 'https://murmuring-cove-32988.herokuapp.com';
   }
 
   // Simple-Auth Configuration

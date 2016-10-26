@@ -66,7 +66,7 @@ task :deploy_staging do
   sh 'heroku run rake db:migrate'
   sh 'heroku run rake db:seed'
 
-  release_output = `heroku releases -a sleepy-island-97763 `.split "\n"
+  release_output = `heroku releases -a murmuring-cove-32988 `.split "\n"
   latest_release = release_output[1].match(/v\d+/).to_s
 
   tags = `git tag`
@@ -98,7 +98,7 @@ task :deploy_production do
   sh 'heroku run rake db:migrate'
   sh 'heroku run rake db:seed'
 
-  release_output = `heroku releases -a sleepy-island-97763 `.split "\n"
+  release_output = `heroku releases -a murmuring-cove-32988 `.split "\n"
   latest_release = release_output[1].match(/v\d+/).to_s
 
   tags = `git tag`
